@@ -5,7 +5,7 @@ services:
     container_name: minimarket-front
     image: minimarket-front:1
     build:
-      context: .
+      context: Saas_Virgen_de_Lourdes
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
