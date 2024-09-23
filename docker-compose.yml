@@ -13,7 +13,7 @@ services:
     depends_on:
       - minimarket-mysql
     networks:
-      'minimarket-network'
+      - 'minimarket-network'
   minimarket:
     container_name: minimarket
     image: minimarket:1
