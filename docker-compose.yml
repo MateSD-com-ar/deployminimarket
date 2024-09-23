@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  app:
+  SAAS_VIRGEN_DE_LOURDES:
     container_name: minimarket-front
     image: minimarket-front:1
     build:
