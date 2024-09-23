@@ -1,15 +1,21 @@
 FROM node:alpine
 
-WORKDIR /SAAS_VIRGEN_DE_LOURDES
+WORKDIR /app
 
-COPY package*.json .
+# Copy package.json and package-lock.json to the working directory
+COPY package*.json ./
 
+# Install dependencies
 RUN npm install
 
-COPY . .
+# Copy the rest of the application code to the working directory
+COPY . .  # This is the correct usage
 
+# Build the app for production
 RUN npm run build
 
+# Expose the port the app will run on
 EXPOSE 3000
 
-CMD ["npm","start"]
+# Start the application
+CMD ["npm", "start"]
