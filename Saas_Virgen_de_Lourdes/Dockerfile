@@ -2,14 +2,20 @@ FROM node:alpine
 
 WORKDIR /SAAS_VIRGEN_DE_LOURDES
 
-COPY package*.json .
+# Copiar package.json y package-lock.json al directorio de trabajo
+COPY package*.json ./
 
+# Instalar dependencias
 RUN npm install
 
-COPY . .
+# Copiar todos los archivos y directorios al directorio de trabajo
+COPY . ./
 
+# Construir la aplicación para producción
 RUN npm run build
 
+# Exponer el puerto en el que la aplicación se ejecutará
 EXPOSE 3000
 
-CMD ["npm","start"]
+# Iniciar la aplicación
+CMD ["npm", "start"]
